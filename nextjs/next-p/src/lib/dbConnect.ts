@@ -5,6 +5,8 @@ type ConnectionObject = {
     isConnected?:number
 }
 
+##hello
+
 const connection : ConnectionObject={}
 
 async function dbConnect():Promise<void> {
