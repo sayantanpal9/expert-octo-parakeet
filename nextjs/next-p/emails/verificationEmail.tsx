@@ -2,7 +2,7 @@ import { Body, Button, Container, Head, Heading, Html, Img, Preview, Section, Ta
 
 interface VerificationEmailProps {
   email?: string;
-  verifyCode?: number;
+  verifyCode?: string;
 }
 
 const VerificationEmail = ({
