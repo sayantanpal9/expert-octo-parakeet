@@ -31,7 +31,7 @@ export async function POST(request: Request) {
         }
 
         const hash = await bcrypt.hash(password, 10);
-        const verifyCode = (Math.floor(Math.random() * 9999)).toString()
+        const verifyCode = (Math.floor(Math.random() * 8999)+1000).toString()
         const codeExpiry = new Date()
         codeExpiry.setHours(codeExpiry.getHours() + 1)
         const newUser = new UserModel({
@@ -48,7 +48,7 @@ export async function POST(request: Request) {
         const sendEmail = await sendVerificationEmail(email, verifyCode);
         if (sendEmail.success) {
             return Response.json({
-                success: false,
+                success: true,
                 message:'verification code sent successfully'
 
             },{status:201})
@@ -60,7 +60,7 @@ export async function POST(request: Request) {
 
     }
     catch (error) {
-        console.error('error signing up')
+        console.error('error signing up',error)
         return Response.json({success:false,message:'error signing up'},{status:500})
     }
 }

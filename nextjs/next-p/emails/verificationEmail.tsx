@@ -7,7 +7,7 @@ interface VerificationEmailProps {
 
 const VerificationEmail = ({
   email ,
-  verifyCode,
+  verifyCode
 }: VerificationEmailProps) => {
   const previewText = `Your verification code to login is ${verifyCode}`;
 
@@ -17,7 +17,7 @@ const VerificationEmail = ({
       <Preview>{previewText}</Preview>
       <Tailwind>
         <Body className="bg-black m-auto font-sans">
-          <Container className="mb-10 mx-auto p-5 max-w-[465px]">
+          <Container className="mb-10 mx-auto p-5">
             <Section className="mt-10">
               <Img
                 src={`https://example.com/brand/example-logo.png`}
@@ -34,7 +34,7 @@ const VerificationEmail = ({
               Hello {username},
             </Text> */}
             <Text className="text-start text-sm text-white leading-relaxed">
-              Hey there! Your verification to log in to our platform in ${verifyCode}. Do not send this code with anyone, especially if you did not try to log in. Thanks.
+              Hey there! Your verification code to log in to our platform is {verifyCode}. Do not send this code to anyone, especially if you did not request it. Thanks.
             </Text>
             {/* <Section className="text-center mt-[32px] mb-[32px]">
               <Button
