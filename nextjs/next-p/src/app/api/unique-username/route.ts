@@ -6,7 +6,7 @@ import { verifyUsername } from "@/schemas/signUpSchema";
 export async function POST(request: Request) {
     await dbConnect();
     try {
-        const { username, password } = await request.json();
+        const { username } = await request.json();
         const usernameSchema = z.object({
             username:verifyUsername
         })
