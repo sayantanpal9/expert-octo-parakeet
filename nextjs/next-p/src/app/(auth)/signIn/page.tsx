@@ -14,6 +14,7 @@ import { Field } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { InputGroup, InputGroupAddon, InputGroupText, InputGroupTextarea } from "@/components/ui/input-group"
 import { Button } from "@/components/ui/button"
+import { toast } from "sonner"
 
 
 
@@ -40,11 +41,13 @@ export default  function Page() {
     try {
       const res = await axios.post('/api/signUp', data);
       router.replace(`/verify/${username}`)
+      toast.success('sigingn up successful')
       
     } catch (error) {
       console.error('error submitting', error)
       let axiosErr = error as AxiosError<ApiResponse>;
       let errmsg = axiosErr.response?.data.message;
+      toast.error(errmsg)
     } finally {
       setDataSent(false)
     }
