@@ -85,13 +85,12 @@ export default  function Page() {
 
   
 
-  return(
+  return (
+      
+    <div className='flex justify-center items-center'>
     <Card className="w-full sm:max-w-md">
       <CardHeader>
-        <CardTitle>Bug Report</CardTitle>
-        <CardDescription>
-          Help us improve by reporting bugs you encounter.
-        </CardDescription>
+        <CardTitle>Sign up</CardTitle>
       </CardHeader>
       <CardContent>
         <form id="form-rhf-demo" onSubmit={form.handleSubmit(onSubmit)}>
@@ -180,5 +179,6 @@ export default  function Page() {
         </Field>
       </CardFooter>
     </Card>
+    </div>
   )
 }
