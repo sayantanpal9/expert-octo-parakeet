@@ -1,5 +1,6 @@
 import { z } from "zod";
 
-export const signIn = z.object({
-    verified: z.boolean()
+export const signInSchema = z.object({
+    identifier: z.string(),
+    password:z.string()
 })

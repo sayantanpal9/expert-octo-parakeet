@@ -32,9 +32,10 @@ export default function Page() {
 
             })
             toast.success(res.data.message);
-            route.replace('/dashboard');
+            route.replace('/signIn');
 
         } catch (error) {
+          
             const ax = error as AxiosError<ApiResponse>
             toast.error(ax.response?.data.message ?? 'error verifying');
             
