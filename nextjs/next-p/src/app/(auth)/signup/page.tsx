@@ -15,6 +15,7 @@ import { Input } from "@/components/ui/input"
 import { InputGroup, InputGroupAddon, InputGroupText, InputGroupTextarea } from "@/components/ui/input-group"
 import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
+import { Loader2 } from "lucide-react"
 
 
 
@@ -40,8 +41,8 @@ export default  function Page() {
     setDataSent(true);
     try {
       const res = await axios.post('/api/signUp', data);
-      router.replace(`/verify/${username}`)
       toast.success('sigingn up successful')
+      router.replace(`/verify/${username}`)
       
     } catch (error) {
       console.error('error submitting', error)
@@ -173,9 +174,9 @@ export default  function Page() {
           <Button type="button" variant="outline" onClick={() => form.reset()}>
             Reset
           </Button>
-          <Button type="submit" form="form-rhf-demo">
+          {dataSent?<Loader2 className="animate-spin"/>:<Button type="submit" form="form-rhf-demo">
             Submit
-          </Button>
+          </Button>}
         </Field>
       </CardFooter>
     </Card>

@@ -16,6 +16,7 @@ import { InputGroup, InputGroupAddon, InputGroupText, InputGroupTextarea } from 
 import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
 import { signIn } from "next-auth/react"
+import { Loader2 } from "lucide-react"
 
 
 
@@ -121,9 +122,9 @@ export default  function Page() {
           <Button type="button" variant="outline" onClick={() => form.reset()}>
             Reset
           </Button>
-          <Button type="submit" form="form-rhf-demo">
+          {dataSent?<Loader2 className="animate-spin"/>:<Button type="submit" form="form-rhf-demo">
             Submit
-          </Button>
+          </Button>}
         </Field>
       </CardFooter>
     </Card>
