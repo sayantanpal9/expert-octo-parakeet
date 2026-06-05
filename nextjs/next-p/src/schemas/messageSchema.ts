@@ -1,5 +1,5 @@
 import {z} from 'zod'
 
-export const messageValidation = z.object({
+export const messageSchema = z.object({
     content :z.string()
 })
